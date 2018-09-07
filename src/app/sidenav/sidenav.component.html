@@ -1,0 +1,33 @@
+<div class="nav">
+    <fa name="cog" class="options"></fa>
+    <div class="user-info">
+        <div class="user-info--avatar">
+            <img src="../../assets/img/user-avatar-default.png" class="avatar" alt="avatar">
+        </div>
+        <div class="user-info--private">
+            <h2>{{currentUser.login}}</h2>
+            <p class="info">{{currentUser.city}}</p>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a [routerLink]="['/welcome']">Homepage</a>
+            <div class="icon">
+                    <fa name="fas fa-home" class="icon-i"></fa>
+            </div>    
+        </li>
+        <li>
+            <a href="#">Look for other cities</a>
+            <div class="icon">
+                    <fa name="fas fa-building" class="icon-i"></fa>
+            </div>
+        </li>
+        <li>
+            <a href="#">Favourites</a>
+            <div class="icon">
+                    <fa name="far fa-star" class="icon-i"></fa>
+            </div>
+        </li>
+    </ul>
+</div>

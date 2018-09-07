@@ -1,0 +1,38 @@
+<div class="outer_box_register outer_box">
+  <div class="login">
+    <h2>Register</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" required autocomplete="no" pattern="^[a-zA-Z0-9]*$" formControlName="formLogin" placeholder="Username" id="formLogin" class="form-control" name="formLogin" [(ngModel)]="login">              
+            <div *ngIf="subbmitted && f.formLogin.errors" class="invalid-feedback">
+                <div *ngIf="f.formLogin.errors.required">Login is required</div>
+                <div *ngIf="f.formLogin.errors.pattern">No special characters allowed</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" required formControlName="formPassword" name="formPassword" id="formPassword" placeholder="Password" [(ngModel)]="password"/>
+            <div *ngIf="subbmitted && f.formPassword.errors" class="invalid-feedback">
+                <div *ngIf="f.formPassword.errors.required">Password is required</div>
+                <div *ngIf="f.formPassword.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+     
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your city" formControlName="formCity" [formControl]="myControl" matInput name="city" id="city" [matAutocomplete]="auto" [(ngModel)]="city"/>
+                <p class="notification">Let us display weather for your location !</p>
+            </div>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+  
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block btn-large">Register</button>
+        </div>
+      </form>
+      <p>already have an account ?</p>
+      <button class="btn btn-primary btn-block btn-large" (click)="toLogin()">Login</button>
+  </div>
+</div>
+  

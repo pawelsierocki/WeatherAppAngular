@@ -1,0 +1,21 @@
+<div class="outer_box_login outer_box">
+  <div class="login">
+    <h2>Login</h2>
+      <div class="invalid-feedback" *ngIf="wrongData">Wrong username or password</div>
+
+        <div class="form-group">
+          <input type="text" name="username" placeholder="Username" [(ngModel)]="login"/>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" placeholder="Password" [(ngModel)]="password"/>
+        </div>
+        
+        <div class="form-group">
+            <button class="btn btn-primary btn-block btn-large" (click)="onSubmit()">Login</button>
+        </div>
+ 
+      <p>or register if you don't have an account</p>
+      <button class="btn btn-primary btn-block btn-large" (click)="toRegister()">Register</button>
+  </div>
+</div>
+  
