@@ -24,9 +24,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
-    console.log(usersArray)
     usersArray.forEach(element => {
-      console.log(element.login)
       if (this.login === element.login && this.hash.hashPassword(this.password) === element.password) {
         localStorage.setItem("loggedUser", JSON.stringify(element));
         this.router.navigate(['/welcome']);

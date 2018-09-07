@@ -3,3 +3,57 @@
 	box-sizing: border-box;
 	letter-spacing: 1px;
 }
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.icon {
+	font-size: 36px;
+}
+
+h2 {
+	text-align: center;
+	font-style: italic;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+/*   
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -80%, 0);
+      transform: translate3d(0, -80%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  } */
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-80%, -80%, -50%);
+      transform: translate3d(-80%, -80%, -50%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translate3d(-50%, -50%, -50%);
+      transform: translate3d(-50%, -50%, -50%);
+    }
+  }

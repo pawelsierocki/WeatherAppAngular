@@ -9,7 +9,8 @@ import {
   MatInputModule,
   MatRippleModule
 } from '@angular/material';
-import { AngularFontAwesomeModule } from 'angular-font-awesome'
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     RegisterComponent,
     WelcomeComponent,
     SidenavComponent,
+    ViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

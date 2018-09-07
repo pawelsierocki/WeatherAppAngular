@@ -11,14 +11,20 @@
     transform: translateX(-75%);
     transition: all .8s;
     background-color: #444;
+    box-shadow: #444 1px 2px 20px;
+}
+.nav:hover {
+    cursor: pointer;
+    transform: translateX(0);
+    box-shadow: none;
 }
 
 .options {
     position: absolute;
     top: 5px;
-    right: 10px;
+    right: 12px;
     color: white;
-    font-size: 30px;
+    font-size: 26px;
 
 }
 
@@ -34,10 +40,7 @@
         transform: rotate(360deg);
     }
 }
-.nav:hover {
-    cursor: pointer;
-    transform: translateX(0);
-}
+
 .nav ul {
     list-style: none;
     padding: 0;
@@ -99,4 +102,17 @@ h2 {
 .info {
     font-size: 12px;
     color: white;
+}
+
+.logout {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    color: white;
+    font-size: 26px;
+    transition: all .4s;
+}
+
+.logout:hover {
+    color: orangered;
 }

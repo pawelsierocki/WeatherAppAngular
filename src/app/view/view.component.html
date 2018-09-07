@@ -1,0 +1,31 @@
+<div class="view">
+  <div class="city-weather-info">
+      <div class="city">
+          <h1>{{city.name}}</h1>
+      </div>
+      <div class="weather-info">
+        <p>{{city.main.temp}}°C</p>
+        <p>{{city.weather[0].main}}</p>
+        <p>Realfeel: {{(city.main.temp).toFixed(0)}}°C</p>
+      </div>    
+  </div>
+  
+  <div class="row icons">
+    <div class="col-4 icon">
+        <fa name="fas fa-thermometer-empty"></fa>
+        <p>{{city.main.temp}}°C</p>
+      </div>
+    <div class="col-4 icon">
+        <fa name="fas fa-fast-forward"></fa>
+        <p>{{city.wind.speed}}m/s</p>
+    </div>
+    <div class="col-4 icon iconnone">
+        <fa name="fas fa-tint"></fa>
+        <p>35%</p>
+    </div>
+  </div>
+
+  <div class="row description">
+    <p>{{city.weather[0].description.slice(0,1) | uppercase}}{{city.weather[0].description.slice(1,city.weather[0].description.length)}}</p>
+  </div>
+</div>

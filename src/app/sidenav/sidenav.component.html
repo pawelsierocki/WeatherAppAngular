@@ -1,5 +1,5 @@
 <div class="nav">
-    <fa name="cog" class="options"></fa>
+    <fa name="cog" class="options" title="Edit profile" [routerLink]="'/profile'"></fa>
     <div class="user-info">
         <div class="user-info--avatar">
             <img src="../../assets/img/user-avatar-default.png" class="avatar" alt="avatar">
@@ -30,4 +30,6 @@
             </div>
         </li>
     </ul>
+
+    <fa name="fas fa-power-off" class="logout" (click)="logout()" title="Logout"></fa>
 </div>
