@@ -16,6 +16,8 @@ export class OthercitiesComponent implements OnInit {
   currentCity : any;
   errorMessage: any;
   selectedCity : any;
+  notFound : boolean = false;
+
   constructor(private cities : Cities,
               private getData : GetWeatherDataService) { }
 
@@ -35,13 +37,19 @@ export class OthercitiesComponent implements OnInit {
 
   changeCity() {
     this.selectedCity = null;
+    this.notFound = false;
     let URLCity = 'https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q='+this.currentCity+',pl&APPID=3cee49ea17093ac019b3971b0e3bf61c&units=metric';
-   
-    this.getData.getData(URLCity).subscribe(
+    if (this.currentCity != undefined && this.currentCity.length){
+      this.getData.getData(URLCity).subscribe(
         weather => {
           this.selectedCity = weather;
         },
         error => this.errorMessage = <any>error
     );
+    }else{   
+      setTimeout(() => {
+        this.notFound = true;
+      }, 3000);
+    }
   }
 }

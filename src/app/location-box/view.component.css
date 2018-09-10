@@ -16,6 +16,8 @@
     background-size: cover !important;
     background-repeat: none !important;
     background-position-x: -100px !important;
+    box-shadow: 1px 5px 10px #333;
+    transform: scale(0.99);
 }
 
 .city-weather-info {

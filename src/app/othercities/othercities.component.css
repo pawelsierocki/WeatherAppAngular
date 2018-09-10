@@ -48,3 +48,11 @@
   .icon {
 	font-size: 36px;
 }
+
+h1 {
+    text-shadow: 1px 1px 8px #333;
+}
+
+.color {
+    color: red;
+}

@@ -24,6 +24,10 @@
 </div>
 
 
-<div class="center" *ngIf="selectedCity === null">
+<div class="center" *ngIf="notFound">
+    <h1>Sorry, we can't find this city. <span class="color"> Please try again.</span></h1>
+</div>
+
+<div class="center" *ngIf="selectedCity === null && !notFound">
     <fa name="fas fa-spinner" animation="spin" class="icon"></fa>
 </div>
