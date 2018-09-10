@@ -10,7 +10,7 @@ import {
   MatRippleModule
 } from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +22,9 @@ import { ViewComponent } from './location-style/view.component';
 import { OthercitiesComponent } from './othercities/othercities.component';
 import { Cities } from './services/cities';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { FavouritesComponent } from './favourites/favourites.component';
     MatInputModule,
     MatRippleModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     Cities

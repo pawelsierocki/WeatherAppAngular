@@ -29,5 +29,6 @@
     <p>{{city.weather[0].description.slice(0,1) | uppercase}}{{city.weather[0].description.slice(1,city.weather[0].description.length)}}</p>
   </div>
 
-  <button class="btn btn-danger btn-fav" (click)="addToFavourites(this.city)">Add to favourites</button>
+  <button *ngIf="!favourite" class="btn btn-danger btn-fav" (click)="addToFavourites(this.city)">Add to favourites</button>
+  <button *ngIf="favourite" class="btn btn-danger btn-fav" (click)="removeFromFavourites(this.city)">Remove from favourites</button>
 </div>

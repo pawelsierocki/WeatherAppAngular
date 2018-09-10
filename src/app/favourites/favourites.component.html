@@ -6,5 +6,8 @@
         <app-view [city]="location"></app-view>
     </div>
   </div>
+</div>
 
+<div *ngIf="locations === undefined || locations === null || !locations.length">
+  <h1>No favourites added yet.</h1>
 </div>
