@@ -1,0 +1,10 @@
+<app-sidenav></app-sidenav>
+
+<div class="favourites" *ngIf="locations">
+  <div class="row">
+    <div class="col-3" *ngFor="let location of locations">
+        <app-view [city]="location"></app-view>
+    </div>
+  </div>
+
+</div>

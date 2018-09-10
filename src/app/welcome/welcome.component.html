@@ -1,24 +1,17 @@
 <app-sidenav></app-sidenav>
 
-<div class="center fadeInDown" *ngIf="weatherCity && weatherLocation && different" >
+<div class="center fadeInDown" *ngIf="weatherCity && weatherLocation && different">
     <div class="row">
-        <div class="col-6">
-            <h2>Your city</h2>
-            <app-view [city]="weatherCity"></app-view>
-        </div>
-        <div class="col-6">
-            <h2>Your location</h2>
-            <app-view [city]="weatherLocation"></app-view>
+        <div class="col-6" *ngFor="let location of locations">
+            <app-view [city]="location"></app-view>
         </div>
     </div>
-
 </div>
 
 <div class="center fadeInDown" *ngIf="weatherCity && weatherLocation && !different" >
     <div class="row">
-        <div class="col-6">
-            <h2>Your location</h2>
-            <app-view [city]="weatherLocation"></app-view>
+        <div class="col-6" *ngFor="let location of locations">
+            <app-view [city]="location"></app-view>
         </div>
     </div>     
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GetWeatherDataService } from '../../assets/services/get-weather-data.service'
-import { User } from '../../assets/services/user';
+import { GetWeatherDataService } from '../services/get-weather-data.service'
+import { User } from '../services/user';
 
 @Component({
   selector: 'app-welcome',
@@ -10,6 +10,7 @@ import { User } from '../../assets/services/user';
 })
 export class WelcomeComponent implements OnInit {
 
+  locations : Array<Object> = [];
   currentUser : User;
   errorMessage: string;
   weatherCity: any ;
@@ -33,6 +34,7 @@ export class WelcomeComponent implements OnInit {
     this.getData.getData(URLCity).subscribe(
         weather => {
           this.weatherCity = weather;
+          this.locations.push(weather);
         },
         error => this.errorMessage = <any>error
     );
@@ -58,6 +60,7 @@ export class WelcomeComponent implements OnInit {
     this.getData.getData(URLCoords).subscribe(
       weather => {
         this.weatherLocation = weather;
+        this.locations.push(weather);
         if (this.weatherCity.name != this.weatherLocation.name){
           this.different = true;
         }

@@ -1,0 +1,29 @@
+<app-sidenav></app-sidenav>
+
+<div class="input-field">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="currentCity" class="form-control" placeholder="Your city" [formControl]="myControl" matInput name="city" id="city" [matAutocomplete]="auto"/>
+      </div>
+    <div class="form-group">
+      <button class="btn btn-success" (click)="changeCity()">Search</button>
+    </div>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+</div>
+
+
+<div class="center fadeInDown" *ngIf="selectedCity">
+    <div class="row">
+        <div class="col-6">
+            <app-view [city]="selectedCity"></app-view>
+        </div>
+    </div>
+</div>
+
+
+<div class="center" *ngIf="selectedCity === null">
+    <fa name="fas fa-spinner" animation="spin" class="icon"></fa>
+</div>

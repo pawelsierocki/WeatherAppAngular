@@ -18,7 +18,10 @@ import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { ViewComponent } from './view/view.component';
+import { ViewComponent } from './location-style/view.component';
+import { OthercitiesComponent } from './othercities/othercities.component';
+import { Cities } from './services/cities';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { ViewComponent } from './view/view.component';
     WelcomeComponent,
     SidenavComponent,
     ViewComponent,
+    OthercitiesComponent,
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +40,10 @@ import { ViewComponent } from './view/view.component';
       {path: "login", component: LoginComponent},
       {path: "register", component: RegisterComponent},
       {path: "welcome", component: WelcomeComponent},
+      {path: "cities", component: OthercitiesComponent},
+      {path: "favourites", component: FavouritesComponent},
       {path: '', redirectTo: 'login', pathMatch: 'full'},
       {path:'**', redirectTo: 'login', pathMatch: 'full'}
-
     ]),
     FormsModule,
     ReactiveFormsModule,
@@ -50,7 +56,9 @@ import { ViewComponent } from './view/view.component';
     AngularFontAwesomeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    Cities
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

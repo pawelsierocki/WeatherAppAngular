@@ -1,30 +1,21 @@
 .view {
     width: 240px;
     text-align: center;
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 250, 250, 0),
-        rgba(0,0,0, 0.5)
-      ),url('../../assets/img/sunny.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-position: center;
+    background-size: cover !important;
+    background-repeat: none !important;
+    background-position: center !important;
     color: white;
     padding: 15px;
     transition: all 2s;
     box-shadow: 1px 10px 20px #333;
+    margin-top: 20px;
 }
 
 .view:hover {
     cursor: pointer;
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 250, 250, 0),
-        rgba(0,0,0, 0.6)
-      ),url('../../assets/img/sunny.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-position-x: -100px;
+    background-size: cover !important;
+    background-repeat: none !important;
+    background-position-x: -100px !important;
 }
 
 .city-weather-info {
@@ -69,4 +60,16 @@
 
 .description p {
     width: 100%;
+}
+
+.btn-fav {
+    width: 100%;
+    font-size: 12px;
+    padding: 1px auto;
+    letter-spacing: 2px;
+    background-color: transparent;
+}
+
+.btn-fav:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }

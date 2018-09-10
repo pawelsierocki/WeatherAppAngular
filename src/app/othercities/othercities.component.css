@@ -1,0 +1,50 @@
+*{
+    font-family: 'Open Sans Condensed', sans-serif;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+.center {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.input-field {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#city {
+    border: #9999FF 1px solid;
+    padding: 2px 15px;
+    font-style: italic;
+}
+
+#city::placeholder {
+    font-size: 12px;
+    color: #9999FF;
+}
+
+#city:focus{
+  box-shadow: none !important;
+}
+
+@keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-80%, -80%, -50%);
+      transform: translate3d(-80%, -80%, -50%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translate3d(-50%, -50%, -50%);
+      transform: translate3d(-50%, -50%, -50%);
+    }
+  }
+
+  .icon {
+	font-size: 36px;
+}

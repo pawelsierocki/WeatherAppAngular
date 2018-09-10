@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HashPasswordService } from '../../assets/services/hash-password.service'
+import { HashPasswordService } from '../services/hash-password.service'
 
 @Component({
   selector: 'app-login',

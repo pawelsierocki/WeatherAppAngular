@@ -1,0 +1,10 @@
+*{
+    font-family: 'Open Sans Condensed', sans-serif;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+.favourites {
+    width: 80%;
+    margin: 0 auto 0 10%;
+}
