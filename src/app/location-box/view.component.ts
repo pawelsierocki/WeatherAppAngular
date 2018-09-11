@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { FavouritesComponent } from '../favourites/favourites.component'
 
 @Component({
   selector: 'app-view',
@@ -13,7 +14,8 @@ export class ViewComponent implements OnInit {
   locations : Array<object> = [];
   favourite : boolean = false;
 
-  constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService,
+              private fav : FavouritesComponent) { }
 
   ngOnInit() {
 
@@ -58,16 +60,20 @@ export class ViewComponent implements OnInit {
 
   removeFromFavourites(el) {
     let all = JSON.parse(localStorage.getItem("locations"));
+
     all.forEach((element, index) => {
       if (el.name==element.name) {
         all.splice(index,1);
       }
     });
+
     localStorage.setItem("locations", JSON.stringify(all));
     this.favourite = false;
-    this.toastr.warning("Removed from favourite list")
-    setTimeout(() => {
+    this.toastr.warning("Removed from favourite list");
+    /* setTimeout(() => {
       window.location.reload();
-    }, 1000);
+    }, 1000); */
+
+    this.fav.locations = all;
   }
 }

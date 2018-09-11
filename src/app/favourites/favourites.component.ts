@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, KeyValueDiffers } from '@angular/core';
 
 @Component({
   selector: 'app-favourites',
@@ -9,12 +9,11 @@ export class FavouritesComponent implements OnInit {
 
   locations : Array<Object> = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     if (localStorage.getItem("locations")) {
       this.locations = JSON.parse(localStorage.getItem("locations"));
     }
   }
-
 }

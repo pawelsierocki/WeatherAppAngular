@@ -55,7 +55,8 @@ import { arrRoutes } from '../app/services/routes'
     ToastrModule.forRoot()
   ],
   providers: [
-    Cities
+    Cities,
+    FavouritesComponent
   ],
   bootstrap: [AppComponent]
 })
