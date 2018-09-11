@@ -70,10 +70,7 @@ export class ViewComponent implements OnInit {
     localStorage.setItem("locations", JSON.stringify(all));
     this.favourite = false;
     this.toastr.warning("Removed from favourite list");
-    /* setTimeout(() => {
-      window.location.reload();
-    }, 1000); */
-
+    
     this.fav.locations = all;
   }
 }

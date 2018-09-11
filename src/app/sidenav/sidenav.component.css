@@ -118,3 +118,12 @@ h2 {
 .logout:hover {
     color: orangered;
 }
+
+.active {
+    background-color: white;
+    color: #9999FF;
+}
+
+.nav ul li.active > a{
+    color: #9999FF;
+}
